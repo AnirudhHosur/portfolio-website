@@ -38,9 +38,13 @@ function Appbar(props) {
         <List>
         {navItems.map((item, index) => (
           <ListItem key={index} disablePadding>
-              <ListItemButton sx={{ textAlign: 'center' }}>
+            <ListItemButton sx={{ textAlign: 'center' }}>
+              <Link to={item.path} style={{ textDecoration: 'none' }}>
+                <Typography sx={{ color: '#fff' }}>
                 <ListItemText primary={item.label} />
-              </ListItemButton>
+                </Typography>
+              </Link>
+            </ListItemButton>
           </ListItem>
         ))}
         </List>
