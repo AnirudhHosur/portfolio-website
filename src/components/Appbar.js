@@ -14,23 +14,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import {Button} from '@mui/material';
-import Typed from 'react-typed'
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+const navItems = [{label: 'Projects', path: '/projects'},
+                {label: 'About', path: '/about'},
+                {label: 'Contact', path: '/contact'}];
 
 function Appbar(props) {
-
-    function handleDownload() {
-        const link = document.createElement('a');
-        link.href = 'https://drive.google.com/file/d/1EfAl7oq48nJvSBQlKingv2iKKct7ECE8/view?usp=sharing';
-        link.download = 'CV.pdf';
-        link.target = '_blank'
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
-
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -45,13 +36,13 @@ function Appbar(props) {
         </Typography>
         <Divider />
         <List>
-            {navItems.map((item) => (
-            <ListItem key={item} disablePadding>
-                <ListItemButton sx={{ textAlign: 'center' }}>
-                <ListItemText primary={item} />
-                </ListItemButton>
-            </ListItem>
-            ))}
+        {navItems.map((item, index) => (
+          <ListItem key={index} disablePadding>
+              <ListItemButton sx={{ textAlign: 'center' }}>
+                <ListItemText primary={item.label} />
+              </ListItemButton>
+          </ListItem>
+        ))}
         </List>
         </Box>
     );
@@ -67,15 +58,19 @@ function Appbar(props) {
                 sx={{ mr: 2, display: { sm: 'none' } }}>
                 <MenuIcon />
             </IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
-                ANIRUDH HOSUR
-            </Typography>
-            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                {navItems.map((item) => (
-                <Button key={item} sx={{ color: '#fff' }}>
-                    {item}
+            <Box sx={{ flexGrow: 1 }}>
+            <Link to="/">
+                <Button size="large" sx={{ color: '#fff' }}>
+                    <Typography variant='h6'>Anirudh Hosur</Typography>
                 </Button>
-                ))}
+            </Link>
+            </Box>
+            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                <Link to="/projects">
+                    <Button sx={{ color: '#fff' }}>Projects</Button>
+                </Link>
+                <Button sx={{ color: '#fff' }}>About</Button>
+                <Button sx={{ color: '#fff' }}>Contact</Button>
             </Box>
             </Toolbar>
         </AppBar>
@@ -91,20 +86,7 @@ function Appbar(props) {
             {drawer}
             </Drawer>
         </Box>
-        <Box display="flex" justifyContent="center" alignItems="center" minHeight="100vh">
-            <Box component="main" sx={{ p: 3 }}>
-                <Toolbar />
-                <Typed strings={[
-                    "I'm a Software Developer", 
-                    "I love coding",
-                    "I'm into AWS"
-                ]}
-                typeSpeed={35} backSpeed={35} loop></Typed>
-                <h1>Get to know me better ...</h1>
-                <Button color='success' onClick={handleDownload} variant='contained'>Download CV</Button>
-            </Box>
-        </Box>
-        </Box>
+    </Box>
     );
 }
 

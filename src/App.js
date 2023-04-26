@@ -2,6 +2,9 @@ import './App.css';
 import { Box } from '@mui/material';
 import Appbar from './components/Appbar';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Projects from './components/Projects';
+import LandingPage from './components/LandingPage';
 
 function App() {
 
@@ -15,11 +18,17 @@ function App() {
   });
 
   return (
-    <Box>
-      <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={darkTheme}>
+    <BrowserRouter>
         <Appbar />
-      </ThemeProvider>
-    </Box>
+        <Box marginTop="64px">
+          <Routes>
+            <Route path="/" element={<LandingPage />}/>
+            <Route path="/projects" element={<Projects />}/>
+          </Routes>
+        </Box>
+    </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
