@@ -1,5 +1,6 @@
-import { Box, Toolbar, Button } from "@mui/material";
+import { Box, Toolbar, Button, Grid } from "@mui/material";
 import Typed from 'react-typed'
+import Image from '../assets/final_formal.jpg'
 
 function LandingPage() {
 
@@ -17,14 +18,21 @@ function LandingPage() {
         <Box display="flex" justifyContent="center" alignItems="center" minHeight="100vh">
             <Box component="main" sx={{ p: 3 }}>
                 <Toolbar />
-                <Typed strings={[
-                    "I'm a Software Developer", 
-                    "I love coding",
-                    "I'm into AWS"
-                ]}
-                typeSpeed={35} backSpeed={35} loop></Typed>
-                <h1>Get to know me better ...</h1>
-                <Button color='success' onClick={handleDownload} variant='contained'>Download CV</Button>
+                <Grid container spacing={2}>
+                    <Grid item xs={12} md={6}>
+                        <Typed strings={[
+                            "I'm a Software Developer", 
+                            "I love coding",
+                            "I'm into AWS"
+                        ]}
+                        typeSpeed={35} backSpeed={35} loop></Typed>
+                        <h1>Get to know me better ...</h1>
+                        <Button color='success' onClick={handleDownload} variant='contained'>Download CV</Button>
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <img src={Image} alt="Profile" />
+                    </Grid>
+                </Grid>
             </Box>
         </Box>
     )

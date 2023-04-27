@@ -65,7 +65,7 @@ function Appbar(props) {
             <Box sx={{ flexGrow: 1 }}>
             <Link to="/">
                 <Button size="large" sx={{ color: '#fff' }}>
-                    <Typography variant='h6'>Anirudh Hosur</Typography>
+                    <Typography variant='h5'>Anirudh Hosur</Typography>
                 </Button>
             </Link>
             </Box>
@@ -73,8 +73,12 @@ function Appbar(props) {
                 <Link to="/projects">
                     <Button sx={{ color: '#fff' }}>Projects</Button>
                 </Link>
-                <Button sx={{ color: '#fff' }}>About</Button>
-                <Button sx={{ color: '#fff' }}>Contact</Button>
+                <Link to="/about">
+                    <Button sx={{ color: '#fff' }}>About</Button>
+                </Link>
+                <Link to="/contact">
+                    <Button sx={{ color: '#fff' }}>Contact</Button>
+                </Link>
             </Box>
             </Toolbar>
         </AppBar>

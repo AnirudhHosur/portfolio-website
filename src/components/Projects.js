@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Grid, Card, CardContent, CardActions, Button } from '@mui/material';
+import { Grid, Card, CardContent, CardActions, Button, Container } from '@mui/material';
 
 function Projects() {
 
     const [repositories, setRepositories] = useState([]);
-
     useEffect(() => {
         fetch('https://api.github.com/users/AnirudhHosur/repos')
         .then(response => response.json())
@@ -12,6 +11,7 @@ function Projects() {
     }, []);
 
     return (
+        <Container>
         <Grid container spacing={2}>
         {repositories.map(repository => (
             <Grid item xs={12} sm={6} md={4} key={repository.id}>
@@ -21,7 +21,7 @@ function Projects() {
                 <p>{repository.description}</p>
                 </CardContent>
                 <CardActions>
-                <Button href={repository.html_url} target="_blank">
+                <Button color='success' href={repository.html_url} target="_blank">
                     View on Github
                 </Button>
                 </CardActions>
@@ -29,6 +29,7 @@ function Projects() {
             </Grid>
         ))}
         </Grid>
+        </Container>
     )
 }
 
