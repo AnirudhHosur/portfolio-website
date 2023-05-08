@@ -4,13 +4,11 @@ import AboutImage from '../assets/latest.jpg'
 function About() {
     return(
         <Container>
-            <Typography variant="h4" align="center">
-                An Informal Introduction
-            </Typography>
             <Grid container spacing={2}>
                 <Grid item xs={6}>
                 <Typography variant="body1">
-                Hey dear viewer, this is Anirudh Hosur currently pursuing a master's in applied computer science at Dalhousie University.
+                Hey dear viewer, this is Anirudh Hosur. I'm currently pursuing a master's in applied computer science at Dalhousie University.
+                I have over 1.5 years of industry experince in developing applications in Spring boot and UI with MERN stack. 
                 </Typography>
                 </Grid>
                 <Grid item xs={6}>
