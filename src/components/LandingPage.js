@@ -4,13 +4,13 @@ import Typed from 'react-typed'
 function LandingPage() {
 
     function handleDownload() {
-        const link = document.createElement('a');
-        link.href = 'https://drive.google.com/file/d/1EfAl7oq48nJvSBQlKingv2iKKct7ECE8/view?usp=sharing';
-        link.download = 'CV.pdf';
-        link.target = '_blank'
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        // const link = document.createElement('a');
+        // link.href = 'https://drive.google.com/file/d/1EfAl7oq48nJvSBQlKingv2iKKct7ECE8/view?usp=sharing';
+        // link.download = 'CV.pdf';
+        // link.target = '_blank'
+        // document.body.appendChild(link);
+        // link.click();
+        // document.body.removeChild(link);
     }
 
     return(
