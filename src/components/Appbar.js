@@ -70,11 +70,14 @@ function Appbar(props) {
             </Link>
             </Box>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+            <Link to="/about">
+                    <Button sx={{ color: '#fff' }}>About</Button>
+                </Link>
+                <Link to="/youtube">
+                    <Button sx={{ color: '#fff' }}>Youtube</Button>
+                </Link>
                 <Link to="/projects">
                     <Button sx={{ color: '#fff' }}>Projects</Button>
-                </Link>
-                <Link to="/about">
-                    <Button sx={{ color: '#fff' }}>About</Button>
                 </Link>
                 <Link to="/contact">
                     <Button sx={{ color: '#fff' }}>Contact</Button>

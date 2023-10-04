@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import LandingPage from './components/LandingPage';
 import About from './components/About';
 import Contact from './components/Contact';
+import YoutubePage from './components/YoutubePage';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
             <Route path="/about" element={<About />}/>
             <Route path="/projects" element={<Projects />}/>
             <Route path="/contact" element={<Contact />}/>
+            <Route path="/youtube" element={<YoutubePage />}/>
           </Routes>
         </Box>
     </BrowserRouter>
