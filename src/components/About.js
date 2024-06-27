@@ -1,11 +1,25 @@
-import { Container, Grid, Typography, Box, TableContainer, Table, TableBody, TableRow, TableCell, Paper } from "@mui/material";
+import CloseIcon from '@mui/icons-material/Close';
+import { Box, Button, Container, Dialog, DialogContent, DialogTitle, Grid, IconButton, Typography } from "@mui/material";
+import { useState } from 'react';
 import AboutImage from '../assets/latest.jpg';
+import Experiences from "./Experience";
 
 function About() {
+
+    const [open, setOpen] = useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
     return (
         <Container maxWidth="lg" style={{ paddingTop: '2rem', paddingBottom: '2rem' }}>
             <Grid container spacing={5} alignItems="center" justifyContent="center">
-                
+
                 {/* Image on the left for larger screens, top for smaller screens */}
                 <Grid item xs={12} md={6}>
                     <Box display="flex" justifyContent="center">
@@ -22,15 +36,57 @@ function About() {
                         Master's in Applied Computer Science, Dalhousie University
                     </Typography>
                     <Typography variant="body1" paragraph>
-                        I have over 3 years of industry experience in developing applications using Spring boot for the backend and MERN stack for the frontend.
+                        Experienced Software Engineer with 1.5+ years in full-stack development. Proficient in Java,
+                        SQL, Python, and JavaScript, with expertise in scalable applications and secure APIs. Certified
+                        in AWS and GCP for robust cloud solutions.
                     </Typography>
 
-                    <Typography variant="h6" gutterBottom>
-                        Programming Languages and Tools
-                    </Typography>
-                    <Typography variant="body2" paragraph>
-                        Java, Python, C/C++, JavaScript/TypeScript, and more...
-                    </Typography>
+                    <Box display="flex" justifyContent="center" mb={2}>
+                        <Button variant="contained" color="primary" onClick={handleClickOpen}>
+                            Programming Languages and Tools
+                        </Button>
+                    </Box>
+
+                    <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
+                        <DialogTitle>
+                            TECHNICAL SKILLS & CERTIFICATIONS
+                            <IconButton
+                                aria-label="close"
+                                onClick={handleClose}
+                                sx={{
+                                    position: 'absolute',
+                                    right: 8,
+                                    top: 8,
+                                    color: (theme) => theme.palette.grey[500],
+                                }}
+                            >
+                                <CloseIcon />
+                            </IconButton>
+                        </DialogTitle>
+                        <DialogContent dividers>
+                            <Typography variant="body1" paragraph>
+                                <strong>Programming Language:</strong> Java, Python, JavaScript/TypeScript, Node.js, HTML5, CSS, Kotlin, C#, C/C++, Linux commands
+                            </Typography>
+                            <Typography variant="body1" paragraph>
+                                <strong>Backend frameworks:</strong> Spring boot, Junit, Mockito & Groovy, Django, FastAPI, Flask & Selenium, Express.js, Jest, RESTful APIs
+                            </Typography>
+                            <Typography variant="body1" paragraph>
+                                <strong>Frontend frameworks:</strong> React, Angular, Vue.js, Android Studio, React-Native, Grafana & MaterialUI
+                            </Typography>
+                            <Typography variant="body1" paragraph>
+                                <strong>Database & ETL tools:</strong> PostgreSQL, OracleDB, MongoDB, Redis (caching), GCP: Hadoop, Dataflow (map/reduce)
+                            </Typography>
+                            <Typography variant="body1" paragraph>
+                                <strong>Cloud Computing:</strong> AWS: S3, EC2, DynamoDb, Lambda, SNS/SQS, CloudFormation. GCP: Cloud Run/build & Artifact Registry
+                            </Typography>
+                            <Typography variant="body1" paragraph>
+                                <strong>Relevant Skills:</strong> Docker, Terraform, Kubernetes, Jenkins, CI/CD, Git, Infrastructure-as-a-code, Kafka, Microservices
+                            </Typography>
+                            <Typography variant="body1" paragraph>
+                                <strong>Machine Learning:</strong> LLMs, Deep learning, ML Models, data cleaning and pre-processing, Data Science, NLP
+                            </Typography>
+                        </DialogContent>
+                    </Dialog>
 
                     <Typography variant="h6" gutterBottom>
                         My Certifications
@@ -47,60 +103,7 @@ function About() {
                 </Grid>
                 {/* Experiences Section */}
                 <Grid item xs={12}>
-                    <Typography variant="h6" gutterBottom>
-                        Experiences:
-                    </Typography>
-                    <TableContainer component={Paper}>
-                        <Table>
-                            <TableBody>
-                                <TableRow>
-                                    <TableCell>Cloud Developer Intern, CloudOps</TableCell>
-                                    <TableCell align="right">Montreal</TableCell>
-                                    <TableCell align="right">Aug 2023 - Present</TableCell>
-                                </TableRow>
-                                <TableRow>
-                                    <TableCell>Teaching Assistant and Marker, Dalhousie University</TableCell>
-                                    <TableCell align="right">Halifax</TableCell>
-                                    <TableCell align="right">Aug 2023 - Present</TableCell>
-                                </TableRow>
-                                <TableRow>
-                                    <TableCell>Research Assistant, Dalhousie University</TableCell>
-                                    <TableCell align="right">Halifax</TableCell>
-                                    <TableCell align="right">Nov 2022 - Jan 2023</TableCell>
-                                </TableRow>
-                                <TableRow>
-                                    <TableCell>Associate Consultant, Oracle</TableCell>
-                                    <TableCell align="right">India</TableCell>
-                                    <TableCell align="right">Aug 2021 - Aug 2022</TableCell>
-                                </TableRow>
-                                <TableRow>
-                                    <TableCell>Developer Intern, Quinbay Technologies</TableCell>
-                                    <TableCell align="right">India</TableCell>
-                                    <TableCell align="right">Jan 2021 - Jul 2021</TableCell>
-                                </TableRow>
-                                <TableRow>
-                                    <TableCell>Artificial Intelligence Engineer Intern, Myriadcara Technologies</TableCell>
-                                    <TableCell align="right">India</TableCell>
-                                    <TableCell align="right">Nov 2020 - Dec 2020</TableCell>
-                                </TableRow>
-                                <TableRow>
-                                    <TableCell>Research Assistant, Yuan-Ze University</TableCell>
-                                    <TableCell align="right">Taiwan</TableCell>
-                                    <TableCell align="right">Apr 2020 - Jun 2020</TableCell>
-                                </TableRow>
-                                <TableRow>
-                                    <TableCell>Data Science Intern, Flipr Innovation Labs</TableCell>
-                                    <TableCell align="right">India</TableCell>
-                                    <TableCell align="right">May 2020 - Jun 2020</TableCell>
-                                </TableRow>
-                                <TableRow>
-                                    <TableCell>Machine Learning Intern, Smartbridge</TableCell>
-                                    <TableCell align="right">India</TableCell>
-                                    <TableCell align="right">Apr 2020 - May 2020</TableCell>
-                                </TableRow>
-                            </TableBody>
-                        </Table>
-                    </TableContainer>
+                    <Experiences />
                 </Grid>
             </Grid>
         </Container>
