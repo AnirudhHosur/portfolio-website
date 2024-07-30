@@ -36,7 +36,7 @@ function About() {
                         Master's in Applied Computer Science, Dalhousie University
                     </Typography>
                     <Typography variant="body1" paragraph>
-                        Experienced Software Engineer with 1.5+ years in full-stack development. Proficient in Java,
+                        Experienced Software Engineer with 2.5+ years in full-stack development. Proficient in Java,
                         SQL, Python, and JavaScript, with expertise in scalable applications and secure APIs. Certified
                         in AWS and GCP for robust cloud solutions.
                     </Typography>

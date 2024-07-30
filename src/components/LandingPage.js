@@ -19,12 +19,12 @@ function LandingPage() {
             <Grid item xs={12} md={6}>
                         <Typed strings={[
                             "I'm a Software Developer",
-                            "I love teaching, coding, learning, & growing",
+                            "I love coding, learning, & growing",
                             "I'm a youtuber", 
                             "I'm into AWS/GCP/Azure",
                             "I'm into MERN, Full-stack, plugin development, and more..",
                         ]}
-                        typeSpeed={75} backSpeed={25} loop></Typed>
+                        typeSpeed={20} backSpeed={10} loop></Typed>
                         <h1>Get to know me better ...</h1>
                         <Button color='success' onClick={handleDownload} variant='contained'>Download CV</Button>
                     </Grid>

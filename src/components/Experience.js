@@ -3,8 +3,18 @@ import { Container, Typography, TableContainer, Table, TableBody, TableRow, Tabl
 const experiences = {
     technical: [
         {
-            title: "Software Consultant, Outlier",
+            title: "Full-stack Developer, Peers Pocket",
             location: "Canada (Remote)",
+            period: "Jun 2024 - Present"
+        },
+        {
+            title: "Founding Software Developer, Anyone Can Cook",
+            location: "Canada (Remote)",
+            period: "Mar 2024 - Present"
+        },
+        {
+            title: "AI Consultant, Outlier",
+            location: "US (Remote)",
             period: "Jan 2024 - May 2024"
         },
         {
@@ -39,7 +49,8 @@ const experiences = {
         },
         {
             title: "Machine Learning Engineer Intern, Smartbridge",
-            location: "May 2020 - May 2020"
+            location: "Bengaluru, Karnataka, India",
+            period: "May 2020 - May 2020"
         }
     ],
     teaching: [
@@ -50,17 +61,17 @@ const experiences = {
         },
         {
             title: "Undergraduate Teaching Assistant and Marker, Dalhousie University",
-            location: "Halifax",
+            location: "Halifax, Nova Scotia, Canada",
             period: "Jan 2023 - Dec 2023"
         },
         {
             title: "Graduate Teaching Assistant and Marker, Dalhousie University",
-            location: "Halifax",
+            location: "Halifax, Nova Scotia, Canada",
             period: "Jan 2023 - Aug 2023"
         },
         {
             title: "Research Assistant, Dalhousie University",
-            location: "Halifax",
+            location: "Halifax, Nova Scotia, Canada",
             period: "Nov 2022 - Dec 2022"
         }
     ]
